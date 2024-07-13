@@ -26,7 +26,7 @@
                 <button class="open-button" onclick="openForm()"><i class="fa-solid fa-user"
                         title="Account"></i></button>
                 <div class="form-popup" id="myForm">
-                    <form action="/action_page.php" class="form-container">
+                    <form method="get" action="thankyou.html" class="form-container">
                         <button type="button" class="btn cancel" onclick="closeForm()"><i
                                 class="fa-solid fa-xmark"></i></button>
                         <h2>Login</h2>
@@ -54,50 +54,55 @@
             <a href="signup.html">Sign Up</a>
             <a href="#">About Us</a>
         </nav>
-        <form method="get" action="thankyou.html">
-            <fieldset>
-                <legend>First Name</legend>
-                <input type="text" name="fname" id="fname" required>
-            </fieldset>
-            <fieldset>
-                <legend>Last Name</legend>
-                <input type="text" name="lname" id="lname" required>
-            </fieldset>
-            <fieldset>
-                <legend>Email</legend>
-                <input type="email" name="email" id="email" required>
-            </fieldset>
-            <fieldset>
-                <legend>Password</legend>
-                <input type="password" name="psw" id="psw" required>
-            </fieldset>
-            <fieldset>
-                <legend>Repeat Password</legend>
-                <input type="password" name="psw_repeat" id="psw_repeat" required>
-            </fieldset>
-            <fieldset>
-                <input type="checkbox" name="alerts" id="alerts" value="getalerts"> Sign up for text alerts and get
-                special offers.
-                <label for="phone">Phone Number:</label>
-                <input type="tel" name="phone" id="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
-            </fieldset>
-            <fieldset>
-                <input type="checkbox" name="tos" id="tos" value="agree" required> Agree to our <a href="#">Terms of
-                    Service</a>
-            </fieldset>
-            <button type="submit" class="signup_btn">Submit <i class="fa-solid fa-arrow-right"></i></button>
-        </form>
-        <img src="img/logo+.png" alt="logo+">
-        <div class="benefits">
-            <h2>Member Benefits Include</h2>
-            <ul>
-                <li>FREE License Laminate</li>
-                <li>1 Yearly Campsite Voucher </li>
-                <li>FREE Monthly Respool Service (Limit 2)</li>
-                <li>Buy 2 get 1 FREE on Select Bait Quantities</li>
-                <li>Members Only Unique Monthly Special Offers</li>
-            </ul>
-
+        <div class="signup">
+            <form class="signup_form" method="get" action="thankyou.html">
+                <fieldset>
+                    <legend>First Name</legend>
+                    <input type="text" name="fname" id="fname" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Last Name</legend>
+                    <input type="text" name="lname" id="lname" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Email</legend>
+                    <input type="email" name="email" id="email" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Password</legend>
+                    <input type="password" name="psw" id="psw" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Repeat Password</legend>
+                    <input type="password" name="psw_repeat" id="psw_repeat" required>
+                </fieldset>
+                <fieldset>
+                    <input type="checkbox" name="alerts" id="alerts" value="getalerts">Sign up for text alerts
+                </fieldset>
+                <fieldset>
+                    <legend>Phone Number</legend>
+                    <input type="tel" name="phone" id="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
+                </fieldset>
+                <fieldset>
+                    <input type="checkbox" name="tos" id="tos" value="agree" required> Agree to our <a href="#">Terms of
+                        Service</a>
+                </fieldset>
+                <button type="submit" class="signup_btn">Submit <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <img class="logo_plus" src="img/logo+.png" alt="logo+">
+            <div class="benefits">
+                <h2>Member Benefits Include</h2>
+                <ul>
+                    <li><i class="fa-solid fa-check" style="color: #63E6BE;"></i> FREE License Laminate</li>
+                    <li><i class="fa-solid fa-check" style="color: #63E6BE;"></i> 1 Yearly Campsite Voucher </li>
+                    <li><i class="fa-solid fa-check" style="color: #63E6BE;"></i> FREE Monthly Respool Service (Limit 2)
+                    </li>
+                    <li><i class="fa-solid fa-check" style="color: #63E6BE;"></i> Buy 2 get 1 FREE on Select Bait
+                        Quantities</li>
+                    <li><i class="fa-solid fa-check" style="color: #63E6BE;"></i> Members Only Unique Monthly Special
+                        Offers</li>
+                </ul>
+            </div>
         </div>
         <footer>
             <div class="sub">

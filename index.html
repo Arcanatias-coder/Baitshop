@@ -23,9 +23,10 @@
                 <h2>Lakeside General Store</h2>
             </div>
             <div class="account_cart">
-                <button class="open-button" onclick="openForm()"><i class="fa-solid fa-user" title="Account"></i></button>
+                <button class="open-button" onclick="openForm()"><i class="fa-solid fa-user"
+                        title="Account"></i></button>
                 <div class="form-popup" id="myForm">
-                    <form action="/action_page.php" class="form-container">
+                    <form method="get" action="thankyou.html" class="form-container">
                         <button type="button" class="btn cancel" onclick="closeForm()"><i
                                 class="fa-solid fa-xmark"></i></button>
                         <h2>Login</h2>
@@ -54,10 +55,10 @@
             <a href="#">About Us</a>
         </nav>
         <div class="index_slideshow">
-            <h1>Welcome to Lakeside</h1>
+            <h2>Welcome to Lakeside</h2>
             <p>Located right next to the Clarence J. Brown Reservoir inside of Buck Creek State Park, Lakeside General
                 Store has served our community for over 20 years. Whether you are fishing, hunting, or camping, we got
-                you covered from supplies and equipement to licenses and permits.</p>
+                you covered from supplies and equipment to licenses and permits.</p>
             <div class="slideshow_container">
                 <div class="mySlides fade"> <img class="slides" src="img/slide_1.png" style="width:100%" alt="slide_1">
                 </div>
@@ -99,23 +100,25 @@
                 }
             </script>
         </div>
+        <div class="empty-box"></div>
         <div class="map">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.7087848155443!2d-83.75041019999999!3d39.94790319999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883f506fbf45c9cd%3A0x73be1ce4b5636f4b!2s1919%20Croft%20Rd%2C%20Springfield%2C%20OH%2045503!5e0!3m2!1sen!2sus!4v1720650857011!5m2!1sen!2sus"
                 width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
+            <h2>Come &amp; See Us!</h2>
             <address>
-                <p class="address_header">Come &amp; See Us!</p>
                 <p>
                     1919 Croft Rd <br>
                     Springfield, Ohio 45503
                 </p>
             </address>
         </div>
+        <div class="empty-box"></div>
         <div class="featured_video">
             <h2>This Week's Featured Video!</h2>
-            <video width="320" height="240" controls>
+            <video width="640" height="480" controls>
                 <source src="video/featured_video.mp4" type="video/mp4">
             </video>
         </div>

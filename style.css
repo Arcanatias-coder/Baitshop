@@ -1,3 +1,9 @@
+/* Live Baitshop
+CIS 130
+Author: Anthony Nelson
+Date: 7/12/2024
+Filename: style.css */
+
 @font-face {
   font-family: vibes;
   src: url(GreatVibes-Regular.ttf);
@@ -6,6 +12,7 @@
 :root {
   --light: rgb(192, 245, 235);
   --dark: rgb(30, 36, 66);
+  --border: 2px solid rgb(30, 36, 66);
   --shadow: 0px 0px 16px 0px rgb(30, 36, 66);
 }
 
@@ -17,13 +24,15 @@ html {
 }
 
 body {
-  max-width: 1024px;
   margin: 0 auto;
   font-size: 100%;
   background-image: url(img/bait_background.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  border-left: solid 2px var(--dark);
+  border-right: solid 2px var(--dark);
+  color: var(--dark);
 }
 
 a {
@@ -32,8 +41,14 @@ a {
 }
 
 a:hover {
+  transition-duration: 0.5s;
   text-decoration: underline;
   color: rgb(17, 196, 179);
+}
+
+body img:hover {
+  transition-duration: 0.5s;
+  box-shadow: var(--shadow);
 }
 
 /* header styles */
@@ -49,7 +64,7 @@ header {
 }
 
 header img {
-  width: 130px;
+  max-width: 130px;
   margin: 16px;
   margin-left: 32px;
   position: relative;
@@ -77,6 +92,7 @@ header h1 {
 }
 
 .open-button:hover {
+  transition-duration: 0.5s;
   color: rgb(17, 196, 179);
 }
 
@@ -84,7 +100,7 @@ header h1 {
   display: none;
   position: fixed;
   top: 0;
-  right: 15px;
+  right: 0;
   border: 2px solid rgb(2, 0, 36);
   opacity: 0.95;
   z-index: 9;
@@ -98,6 +114,7 @@ header h1 {
 }
 
 .form-popup:hover {
+  box-shadow: var(--shadow);
   opacity: 1;
 }
 
@@ -143,6 +160,7 @@ header h1 {
 
 .form-container .btn:hover,
 .open-button:hover {
+  transition-duration: 0.5s;
   opacity: 1;
 }
 
@@ -168,6 +186,8 @@ header h1 {
 .main_nav a {
   padding-right: 16px;
 }
+
+/* footer styles */
 
 footer {
   display: grid;
@@ -205,10 +225,17 @@ footer {
   border: none;
   background: rgb(17, 196, 179);
   color: var(--dark);
+  cursor: pointer;
 }
 
 .sub button:hover {
+  transition-duration: 0.5s;
   color: var(--light);
+}
+
+.social_media {
+  position: relative;
+  top: -10px;
 }
 
 .social_media a {
@@ -216,19 +243,21 @@ footer {
 }
 
 .contact {
-  font-size: 0.7em;
+  line-height: 1.5em;
+  font-size: 0.6em;
 }
 
 .footer_info {
-  font-size: 0.8em;
+  max-width: 80%;
+  font-size: 0.6em;
   line-height: 1.5em;
 }
 
 footer img {
-  width: 130px;
+  max-width: 130px;
   margin-right: 16px;
   border: 2px solid var(--light);
-  border-radius: 50%;
+  border-radius: 100%;
 }
 
 .copy {
@@ -241,28 +270,53 @@ footer img {
   background: rgb(30, 36, 66);
 }
 
+/* index styles */
+.index_slideshow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    'text1 slideshow'
+    'text2 slideshow';
+  margin-top: 64px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.index_slideshow h2 {
+  grid-area: text1;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.index_slideshow p {
+  grid-area: text2;
+  padding: 16px;
+  font-weight: bold;
+}
+
 .mySlides {
   display: none;
 }
 
-img {
+.mySlides img {
   vertical-align: middle;
 }
 
 .slideshow_container {
-  max-width: 500px;
-  position: relative;
+  max-width: 400px;
+  width: 100%;
+  grid-area: slideshow;
   margin: auto;
 }
 
+.slideshow_container:hover {
+  transition-duration: 0.5s;
+  box-shadow: var(--shadow);
+}
+
 .dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
   display: none;
-  transition: background-color 0.6s ease;
 }
 
 .active {
@@ -281,5 +335,344 @@ img {
 
   to {
     opacity: 1
+  }
+}
+
+.empty-box {
+  width: 100%;
+  height: 32px;
+  margin-top: 64px;
+  background: rgb(30, 36, 66);
+}
+
+.map {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    'map subheader'
+    'map address';
+  margin-top: 64px;
+  margin-left: 16px;
+}
+
+.map iframe {
+  grid-area: map;
+}
+
+.map iframe:hover {
+  transition-duration: 0.5s;
+  box-shadow: var(--shadow);
+}
+
+.map h2 {
+  font-size: 2em;
+  grid-area: subheader;
+  margin: 0;
+}
+
+.map p {
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: bold;
+  grid-area: address;
+  margin: 0;
+  position: relative;
+  top: -90px;
+}
+
+.featured_video {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  margin: 32px;
+}
+
+.featured_video h2 {
+  position: relative;
+  top: 50px;
+  margin: 0;
+  font-size: 2em;
+  text-align: center;
+}
+
+.featured_video video {
+  max-width: 100%;
+}
+
+#bait {
+  display: flex;
+  justify-content: space-around;
+}
+
+#bait h2 {
+  text-align: center;
+}
+
+#bait img {
+  max-width: 100%;
+  width: 215px;
+  height: 200px;
+  border: var(--border);
+}
+
+#bait table {
+  table-layout: fixed;
+  width: 220px;
+  border: var(--border);
+  background: rgb(192, 245, 235);
+}
+
+#bait table th {
+  background: rgb(100, 162, 163);
+}
+
+#bait table tr {
+  padding: 0;
+  font-size: 0.8em;
+  font-weight: bold;
+  background: var(--light);
+  color: var(--dark);
+}
+
+#bait table tr:nth-child(even) {
+  background: rgb(17, 196, 179, 0.5);
+}
+
+.more_info {
+  text-align: center;
+  font-style: italic;
+}
+
+.more_info a {
+  color: var(--dark);
+}
+
+.more_info a:hover {
+  transition-duration: 0.5s;
+  color: rgb(17, 196, 179);
+}
+
+#respool img {
+  max-width: 60%;
+  margin: 32px;
+  border: var(--border);
+}
+
+#respool {
+  text-align: center;
+  font-weight: bold;
+}
+
+#license_information {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 16px;
+  margin-top: 16px;
+}
+
+#license_information img {
+  max-width: 100%;
+  width: 320px;
+  border: var(--border);
+}
+
+#license_information h2 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.fishing_license table {
+  border: var(--border);
+  background: var(--light);
+  margin-right: 16px;
+}
+
+.fishing_license table th {
+  background: rgb(100, 162, 163);
+}
+
+.fishing_license,
+.hunting_license table tr {
+  padding: 0;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.fishing_license table tr:nth-child(even) {
+  background: rgb(17, 196, 179, 0.5);
+}
+
+.hunting_license table {
+  border: var(--border);
+  background: rgb(243, 230, 165)
+}
+
+.hunting_license table tr:nth-child(even) {
+  background: rgb(255, 151, 32, 0.5);
+}
+
+.hunting_license table tr th {
+  background: rgb(89, 136, 112);
+}
+
+.signup {
+  display: grid;
+  gap: 16px;
+  grid-template-areas:
+    'form logoplus'
+    'form benefits';
+  margin: 32px;
+}
+
+.signup_form {
+  grid-area: form;
+  padding: 16px;
+  background: rgb(192, 245, 235, 0.8);
+}
+
+.signup_form fieldset {
+  border: none;
+}
+
+.signup_form input:focus {
+  color: rgb(245, 245, 245);
+}
+
+.signup_form a {
+  color: var(--dark);
+}
+
+.signup_form a:hover {
+  color: rgb(17, 196, 179);
+}
+
+.signup_form:hover {
+  transition-duration: 0.5s;
+  backdrop-filter: blur(2px);
+  box-shadow: var(--shadow);
+}
+
+.signup_form button {
+  background: rgb(17, 196, 179);
+  border: none;
+  cursor: pointer;
+  margin-left: 16px;
+  padding: 2px;
+}
+
+.signup_form button:hover {
+  transition-duration: 0.5s;
+  color: var(--light);
+}
+
+.logo_plus {
+  grid-area: logoplus;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  border: var(--border);
+  border-radius: 100%;
+}
+
+.benefits h2 {
+  text-align: center;
+}
+
+.benefits ul {
+  font-weight: bold;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  grid-area: benefits;
+  list-style-type: none;
+}
+
+@media(max-width: 900px) {
+  header img {
+    display: none;
+  }
+
+  footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  footer img {
+    margin-bottom: 16px;
+  }
+
+  .index_slideshow {
+    grid-template-areas:
+      'text1 text1'
+      'text2 text2'
+      'slideshow slideshow';
+  }
+
+  .index_slideshow h2,
+  p {
+    text-align: center;
+  }
+
+  .map {
+    grid-template-areas:
+      'subheader subheader'
+      'map map';
+    justify-content: center;
+  }
+
+  .map h2 {
+    text-align: center;
+  }
+
+  .map iframe {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  address {
+    display: none;
+  }
+
+  #bait {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #license_information {
+    grid-template-columns: 1fr;
+  }
+
+  #license_information img {
+    margin: 32px;
+  }
+
+  .fishing_license,
+  .hunting_license {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .signup img {
+    display: none;
+  }
+
+  .signup {
+    grid-template-areas:
+      'form'
+      'benefits';
+    justify-content: center;
+  }
+}
+
+@media(max-width: 512px) {
+  footer {
+    grid-template-columns: 1fr;
+  }
+
+  footer img {
+    display: none;
+  }
+
+  .footer_info {
+    margin-bottom: 16px;
   }
 }
