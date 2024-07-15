@@ -70,7 +70,7 @@ header img {
   position: relative;
   top: -10px;
   left: -8%;
-  border: solid 2px rgb(30, 36, 66);
+  border: var(--border);
   border-radius: 100%;
 }
 
@@ -119,7 +119,7 @@ header h1 {
 }
 
 .form-container h2 {
-  color: rgb(192, 245, 235);
+  color: var(--light);
   margin: 0 auto;
   position: relative;
   top: -20px;
@@ -172,7 +172,11 @@ header h1 {
   position: relative;
   top: 130px;
   font-size: 1.5em;
-  color: rgb(30, 36, 66);
+  color: var(--dark)
+}
+
+.dropbtn {
+  display: none;
 }
 
 .main_nav {
@@ -184,7 +188,7 @@ header h1 {
 }
 
 .main_nav a {
-  padding-right: 16px;
+  padding: 8px;
 }
 
 /* footer styles */
@@ -197,6 +201,7 @@ footer {
   padding-top: 16px;
   padding-left: 32px;
   color: rgb(17, 196, 179);
+  text-align: center;
 }
 
 .sub h2 {
@@ -248,7 +253,6 @@ footer {
 }
 
 .footer_info {
-  max-width: 80%;
   font-size: 0.6em;
   line-height: 1.5em;
 }
@@ -256,6 +260,7 @@ footer {
 footer img {
   max-width: 130px;
   margin-right: 16px;
+  margin-bottom: 16px;
   border: 2px solid var(--light);
   border-radius: 100%;
 }
@@ -267,7 +272,7 @@ footer img {
   color: var(--light);
   font-size: 0.5em;
   text-align: center;
-  background: rgb(30, 36, 66);
+  background: var(--dark)
 }
 
 /* index styles */
@@ -342,7 +347,7 @@ footer img {
   width: 100%;
   height: 32px;
   margin-top: 64px;
-  background: rgb(30, 36, 66);
+  background: var(--dark)
 }
 
 .map {
@@ -419,7 +424,7 @@ footer img {
   table-layout: fixed;
   width: 220px;
   border: var(--border);
-  background: rgb(192, 245, 235);
+  background: var(--light);
 }
 
 #bait table th {
@@ -532,10 +537,6 @@ footer img {
 
 .signup_form fieldset {
   border: none;
-}
-
-.signup_form input:focus {
-  color: rgb(245, 245, 245);
 }
 
 .signup_form a {
@@ -664,6 +665,33 @@ footer img {
 }
 
 @media(max-width: 512px) {
+  .dropbtn {
+    display: inline-block;
+    border: none;
+    background: var(--dark);
+    color: var(--light);
+    font-size: 2em;
+  }
+
+  .dropdown {
+    position: relative;
+    background: var(--dark);
+  }
+
+  .main_nav {
+    display: none;
+    position: absolute;
+    padding-top: 12px;
+  }
+
+  .main_nav a {
+    display: block;
+  }
+
+  .dropdown:hover .main_nav {
+    display: block;
+  }
+
   footer {
     grid-template-columns: 1fr;
   }
